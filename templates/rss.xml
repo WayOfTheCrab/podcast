@@ -30,7 +30,7 @@
       <title>{{ page.title }}</title>
       <itunes:title>{{ page.title }}</itunes:title>
       <description>
-          {{ page.description }}
+          {{ page.content }}
       </description>
       {% if page.extra.aac_url %}
       <enclosure
@@ -42,7 +42,7 @@
       {% if page.extra.guid %}
       <guid>{{ page.extra.guid }}</guid>
       {% endif %}
-      <pubDate>Tue, 8 Jan 2019 01:15:00 GMT</pubDate>
+      <pubDate>{{ page.date | date(format="%a, %d %B %Y %H:%M:%S GMT", timezone="UTC") }}</pubDate>
       {% if page.extra.duration %}
       <itunes:duration>{{ page.extra.duration }}</itunes:duration>
       {% endif %}
