@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Episodes and Posts</h2>
+{% if section.description %}
+<p>{{ section.description }}</p>
+{% endif %}
+
+{% for page in section.pages %}
+{% if page.date %}
+<div class="post">
+    <a href="{{ page.permalink }}">{{ page.title }}</a> - {{ page.date }}
+    {% if page.description %}
+    <p>{{ page.description }}</p>
+    {% endif %}
+</div>
+{% endif %}
+{% endfor %}
+{% endblock content %}

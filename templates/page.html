@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} - The Way of the Crab{% endblock title %}
+{% block og_title %}{{ page.title }}{% endblock og_title %}
+
+{% block content %}
+<h1>{{ page.title }}</h1>
+{{ page.content | safe }}
+{% endblock content %}

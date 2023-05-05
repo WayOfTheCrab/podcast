@@ -1,0 +1,80 @@
+$orange: rgb(247, 76, 0);
+$bg1: darken($orange, 45%);
+$bg0: darken($orange, 50%);
+
+@font-face {
+    font-family: "Source Sans 3";
+    src: url(/sourcesans/SourceSans3-VariableFont_wght.ttf);
+}
+
+body {
+    background-color: $bg0;
+    color: #FFF;
+    font-family: "Source Sans 3";
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper {
+    padding: 10px;
+    max-width: 800px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $orange;
+}
+
+nav {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    background-color: $bg1;
+    padding: 0.5em;
+
+    h1 {
+        margin: 0px;
+
+        a {
+            text-decoration: none;
+            font-size: 24pt;
+        }
+    }
+
+    ul li {
+        display: inline-block;
+        font-size: 18pt;
+        padding-left: 1em;
+
+        a,
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+a,
+a:visited {
+    color: $orange;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: lighten($orange, 10%);
+}
+
+.post {
+    background-color: $bg1;
+    margin: 10px
+}

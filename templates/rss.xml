@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>The Way of the Crab</title>
+    <link>https://wayofthecrab.com/</link>
+    <language>en-us</language>
+    <copyright>&#169; 2023 The Way of the Crab</copyright>
+    <itunes:author>The Way of the Crab</itunes:author>
+    <description>
+      {{ config.description }}
+    </description>
+    <itunes:type>serial</itunes:type>
+    <itunes:owner>
+      <itunes:name>The Way of the Crab</itunes:name>
+      <itunes:email>podcast@wayofthecrab.com</itunes:email>
+    </itunes:owner>
+    <itunes:image
+      href="https://wayofthecrab.com/cover-art.png"
+    />
+    <itunes:category text="Technology">
+    </itunes:category>
+    <itunes:explicit>false</itunes:explicit>
+    {% for page in pages %}
+    {% if page.date %}
+    <item>
+      <link>{{page.permalink}}</link>
+      {% if page.extra.episode_type %}
+      <itunes:episodeType>{{ page.extra.episode_type }}</itunes:episodeType>
+      {% endif %}
+      <title>{{ page.title }}</title>
+      <itunes:title>{{ page.title }}</itunes:title>
+      <description>
+          {{ page.description }}
+      </description>
+      {% if page.extra.aac_url %}
+      <enclosure
+        length="{{ page.extra.aac_length }}"
+        type="audio/aac"
+        url="{{ page.extra.aac_url }}"
+      />
+      {% endif %}
+      {% if page.extra.guid %}
+      <guid>{{ page.extra.guid }}</guid>
+      {% endif %}
+      <pubDate>Tue, 8 Jan 2019 01:15:00 GMT</pubDate>
+      {% if page.extra.duration %}
+      <itunes:duration>{{ page.extra.duration }}</itunes:duration>
+      {% endif %}
+      {% if page.extra.explicit %}
+      <itunes:explicit>{{ page.extra.explicit }}</itunes:explicit>
+      {% endif %}
+    </item>
+    {% endif %}
+    {% endfor %}
+  </channel>
+</rss>
