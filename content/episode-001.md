@@ -45,4 +45,6 @@ organized by when it is first mentioned.
 - [slotmap](https://crates.io/crates/slotmap)
 - [slab](https://crates.io/crates/slab)
 
-TODO: Where do we want the community to gather? New discord server?
+Have any questions or feedback for us? Email us at
+[podcast@wayofthecrab.com](mailto:podcast@wayofthecrab.com), or join our
+[Discord community](https://discord.gg/gREMsW2uAd).
