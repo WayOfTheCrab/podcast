@@ -5,6 +5,9 @@
 
 {% block content %}
 <h1>{{ page.title }}</h1>
+{% if page.date %}
+<h4>Published {{ page.date | date(format= "%Y-%m-%d") }}</h4>
+{% endif %}
 {% if page.extra.aac_url %}
 <audio controls>
     <source src="{{page.extra.aac_url}}" type="audio/aac">
