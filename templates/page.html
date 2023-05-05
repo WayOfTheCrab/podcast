@@ -5,5 +5,10 @@
 
 {% block content %}
 <h1>{{ page.title }}</h1>
+{% if page.extra.aac_url %}
+<audio controls>
+    <source src="{{page.extra.aac_url}}" type="audio/aac">
+</audio>
+{% endif %}
 {{ page.content | safe }}
 {% endblock content %}
