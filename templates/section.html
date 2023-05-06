@@ -8,8 +8,13 @@
 
 {% for page in section.pages %}
 {% if page.date %}
+{% if has_row %}
+<hr>
+{% else %}
+{% set_global has_row = true %}
+{% endif %}
 <div class="post">
-    <a href="{{ page.permalink }}">{{ page.title }}</a> - {{ page.date | date(format= "%Y-%m-%d") }}
+    <a href="{{ page.permalink }}"># {{ page.title }}</a> - {{ page.date | date(format= "%Y-%m-%d") }}
     {% if page.description %}
     <p>{{ page.description }}</p>
     {% endif %}

@@ -2,9 +2,11 @@
 
 {% block title %}{{ page.title }} - The Way of the Crab{% endblock title %}
 {% block og_title %}{{ page.title }}{% endblock og_title %}
+{% block og_description %}{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}{%
+endblock og_description %}
 
 {% block content %}
-<h1>{{ page.title }}</h1>
+<h1># {{ page.title }}</h1>
 {% if page.date %}
 <h4>Published {{ page.date | date(format= "%Y-%m-%d") }}</h4>
 {% endif %}
@@ -12,6 +14,8 @@
 <audio controls>
     <source src="{{page.extra.aac_url}}" type="audio/aac">
 </audio>
+<p class="audio-link">Controls not working? The episode can be <a href="{{page.extra.aac_url}}">downloaded here</a>.
+</p>
 {% endif %}
 {{ page.content | safe }}
 {% endblock content %}

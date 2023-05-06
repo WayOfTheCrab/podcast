@@ -5,7 +5,7 @@
     <link>https://wayofthecrab.com/</link>
     <language>en-us</language>
     <copyright>&#169; 2023 The Way of the Crab</copyright>
-    <itunes:author>The Way of the Crab</itunes:author>
+    <itunes:author>Ecton and ToggleBit</itunes:author>
     <description>
       {{ config.description }}
     </description>
