@@ -1,24 +1,50 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Episodes and Posts</h2>
-{% if section.description %}
-<p>{{ section.description }}</p>
+<h2>Latest Episodes</h2>
+
+{% set episodes = get_section(path = "episodes/_index.md") %}
+
+<!-- Latest episode -->
+{% if episodes %}
+    {% set latest = episodes.pages | last %}
+
+    <section class="latest-ep">
+        <div class="latest-ep_heading">
+            <h3>[ <a href="{{ latest.permalink }}">{{ latest.title }}</a> ]</h3>
+        </div>
+        <div class="latest-ep_description">
+            <p>{{ latest.description }}</p>
+            <aside>
+                <audio controls>
+                    <source src="{{ latest.extra.aac_url }}" type="audio/aac">
+                </audio>
+            </aside>
+            <p class="audio-link">
+                Controls not working?
+                The episode can be <a href="{{ latest.extra.aac_url }}">downloaded here</a>.
+            </p>
+        </div>
+    </section>
 {% endif %}
 
-{% for page in section.pages %}
-{% if page.date %}
-{% if has_row %}
-<hr>
-{% else %}
-{% set_global has_row = true %}
+{% if section.description %}
+    <p>{{ section.description }}</p>
 {% endif %}
-<div class="post">
-    <a href="{{ page.permalink }}"># {{ page.title }}</a> - {{ page.date | date(format= "%Y-%m-%d") }}
-    {% if page.description %}
-    <p>{{ page.description }}</p>
+
+{% for page in episodes.pages %}
+    {% if page.date and page.permalink != latest.permalink %}
+        {% if has_row %}
+            <hr>
+        {% else %}
+            {% set_global has_row = true %}
+        {% endif %}
+        <div class="post">
+            <a href="{{ page.permalink }}"># {{ page.title }}</a> - {{ page.date | date(format= "%Y-%m-%d") }}
+            {% if page.description %}
+                <p>{{ page.description }}</p>
+            {% endif %}
+        </div>
     {% endif %}
-</div>
-{% endif %}
 {% endfor %}
 {% endblock content %}
