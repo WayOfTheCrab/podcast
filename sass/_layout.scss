@@ -124,6 +124,12 @@ hr {
             margin: 0;
             padding: 0;
             background: black;
+            a {
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
         }
     }
 
@@ -135,7 +141,13 @@ hr {
     }
 
     p {
-        margin: 0 0 0.5rem 0; 
-        padding: 0; 
+        margin: 0 0 0.5rem 0;
+        padding: 0;
     }
+}
+
+.audio-link {
+    font-size: x-small;
+    font-style: italic;
+    text-align: right;
 }
