@@ -76,6 +76,8 @@ nav {
     }
 }
 
+audio { width: 100% }
+
 a,
 a:visited {
     color: $orange;
@@ -136,6 +138,4 @@ hr {
         margin: 0 0 0.5rem 0; 
         padding: 0; 
     }
-
-    audio { width: 100% }
 }
