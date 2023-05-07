@@ -42,4 +42,4 @@ jobs:
 
       - name: Rsync
         run:
-          rsync -avzdn public/ wotc@wayofthecrab.com:public/
+          rsync -aivzd public/ wotc@wayofthecrab.com:public/
