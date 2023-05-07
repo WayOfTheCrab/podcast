@@ -25,7 +25,10 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     environment: wayofthecrab.com
+    needs: [build]
     steps:
+      - uses: actions/download-artifact@v3
+
       - name: Prepare SSH
         run: |
           mkdir ~/.ssh
