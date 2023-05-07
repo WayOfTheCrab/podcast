@@ -27,7 +27,7 @@ jobs:
     environment: wayofthecrab.com
     steps:
       - name: Prepare SSH
-        run:
+        run: |
           mkdir ~/.ssh
           chmod 0700 ~/.ssh
           echo "$SSH_KEY" > ~/.ssh/id_rsa
