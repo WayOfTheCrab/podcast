@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Prepare SSH
-        runs:
+        run:
           mkdir ~/.ssh
           chmod 0700 .ssh
           echo "$SSH_KEY" > ~/.ssh/id_rsa
@@ -37,5 +37,5 @@ jobs:
           KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
 
       - name: Rsync
-        runs:
+        run:
           rsync -avzdn public/ wotc@wayofthecrab.com:public/
