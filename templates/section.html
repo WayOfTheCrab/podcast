@@ -2,23 +2,47 @@
 
 {% block content %}
 <h2>Episodes and Posts</h2>
+
+{% set episodes = get_section(path = "episodes/_index.md") %}
+
+<!-- Latest episode -->
+{% if episodes %}
+{% set latest = episodes.pages.0 %}
+
+<section class="latest-ep">
+    <div class="latest-ep_heading">
+        <h3>[ Latest episode ]</h3>
+    </div>
+    <div class="latest-ep_description">
+        <p>{{ latest.description }}</p>
+        <aside>
+            <audio controls>
+                <source src="{{ latest.extra.aac_url }}" type="audio/aac">
+            </audio>
+        </aside>
+    </div>
+</section>
+
+
+{% endif %}
+
 {% if section.description %}
 <p>{{ section.description }}</p>
 {% endif %}
 
-{% for page in section.pages %}
-{% if page.date %}
-{% if has_row %}
-<hr>
-{% else %}
-{% set_global has_row = true %}
-{% endif %}
-<div class="post">
-    <a href="{{ page.permalink }}"># {{ page.title }}</a> - {{ page.date | date(format= "%Y-%m-%d") }}
-    {% if page.description %}
-    <p>{{ page.description }}</p>
+{% for page in episodes.pages %}
+    {% if page.date %}
+        {% if has_row %}
+            <hr>
+        {% else %}
+            {% set_global has_row = true %}
+        {% endif %}
+        <div class="post">
+            <a href="{{ page.permalink }}"># {{ page.title }}</a> - {{ page.date | date(format= "%Y-%m-%d") }}
+            {% if page.description %}
+            <p>{{ page.description }}</p>
+            {% endif %}
+        </div>
     {% endif %}
-</div>
-{% endif %}
 {% endfor %}
 {% endblock content %}

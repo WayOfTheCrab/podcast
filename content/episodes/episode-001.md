@@ -2,9 +2,10 @@
 title = "Episode 1: Hello, World!"
 description = "Ecton and ToggleBit meet for an introductory episode of The Way of the Crab. The primary topics are: Who are we? What are we trying to build? What is our \"must-use\" crate? We also talk about our user interface projects."
 date = "2023-05-05 09:00:00-07:00"
+aliases = ["episode-001/"]
 [extra]
 episode_type = "full"
-guid = "wotc001"
+guid = "wotc002"
 duration = 4161
 explicit = "false"
 aac_url = "https://files.wayofthecrab.com/episode-001.m4a"
