@@ -45,4 +45,4 @@ jobs:
 
       - name: Rsync
         run:
-          rsync -aivzd public/ wotc@wayofthecrab.com:public/
+          rsync -aivzd --delete public/ wotc@wayofthecrab.com:public/
