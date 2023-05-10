@@ -1,5 +1,19 @@
 # The Way of the Crab Podcast
 
+This repository contains a [Zola](https://getzola.org) website that powers
+[WayOfTheCrab.com](https://wayofthecrab.com).
+
+## Have feedback or questions?
+
+We welcome feedback and questions in three different locations:
+
+- [GitHub Discussions](https://github.com/WayOfTheCrab/podcast/discussions)
+- [Discord](https://discord.wayofthecrab.com/)
+- Email: [podcast@wayofthecrab.com](mailto:podcast@wayofthecrab.com)
+
+If you notice any issues with the content of the website (such as typos,
+broken/missing links, etc), pull requests are gladly accepted.
+
 ## Podcast Release Procedure
 
 - All guests:
@@ -25,8 +39,8 @@
   - Upload the episode to ~/episodes/
   - Update the post's metadata:
     - `aac_length`: Set the size in bytes of the file
-    - `duration` = duration in seconds
-    - Remove draft flag from post
+    - `duration`: duration in seconds
+    - Remove `draft` flag from post
   - Commit and push for the site to be automatically deployed
   - If deployment fails, to manually deploy:
 
