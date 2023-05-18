@@ -7,7 +7,7 @@
 
 <!-- Latest episode -->
 {% if episodes %}
-    {% set latest = episodes.pages | last %}
+    {% set latest = episodes.pages | first %}
 
     <section class="latest-ep">
         <div class="latest-ep_heading">
