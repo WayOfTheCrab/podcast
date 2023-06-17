@@ -1,5 +1,5 @@
 title = "The Way of the Crab"
-description = "A podcast where two Rustaceans set out to make a game."
+description = "A podcast where two Rustaceans set out to make a game. In each episode, we talk about what we've been working on using the Rust programming language as well as other topics that have been on our mind or our listeners have asked about."
 base_url = "https://wayofthecrab.com"
 compile_sass = true
 build_search_index = true
