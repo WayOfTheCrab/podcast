@@ -146,8 +146,10 @@ hr {
     }
 }
 
-.audio-link {
+
+.audio-meta {
+    display: flex;
+    justify-content: space-between;
     font-size: x-small;
     font-style: italic;
-    text-align: right;
 }

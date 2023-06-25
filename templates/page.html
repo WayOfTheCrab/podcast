@@ -16,10 +16,17 @@ endblock og_description %}
     <source src="{{ page.extra.aac_url }}" type="audio/aac">
 </audio>
 
-<p class="audio-link">
-    Controls not working? 
-    The episode can be <a href="{{ page.extra.aac_url }}">downloaded here</a>.
-</p>
+<section class="audio-meta">
+    <p>
+        <a class="perma-link" href="{{ page.permalink }}" data-url="{{ page.permalink }}">Share current timestamp</a>
+        (copy to clipboard)
+    </p>
+
+    <p class="audio-link">
+        Controls not working? 
+        The episode can be <a href="{{ page.extra.aac_url }}">downloaded here</a>.
+    </p>
+</section>
 {% endif %}
 
 {{ page.content | safe }}
